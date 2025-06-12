@@ -1,4 +1,4 @@
-# Mamba Environment for Data Analysis who wants to work on a Cloude based Google Colab Env and Local Env simultaneously
+# Mamba Environment for Data Analysis who wants to work on Google Colab(Cloud based) Env and Local Env simultaneously
 
 This project provides a simple Mamba environment setup (`colab_env_simple.yml`) tailored for data analysis tasks, with a focus on seamless integration with Google Cloud Platform services.
 
