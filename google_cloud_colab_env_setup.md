@@ -88,7 +88,7 @@ To avoid repeatedly typing your project ID, set it as an environment variable:
 
 ```bash
 # Set the project ID variable (replace with your actual project ID)
-export PROJECT_ID="inevstment-aiagent-mark-nicole"
+export PROJECT_ID="your actual project ID"
 
 # Set it as the default project
 gcloud config set project $PROJECT_ID
