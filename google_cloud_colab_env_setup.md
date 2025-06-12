@@ -8,6 +8,8 @@ This guide provides detailed instructions for setting up and using Google Cloud 
 - `colab_env` environment created with Google Cloud SDK and Python libraries (completed ✓)
 - A Google Cloud account (if you don't have one, visit https://cloud.google.com)
 
+
+# 👇do in your terminal
 ## Step 1: Activate Your Environment
 
 <!-- First, you need to activate the `colab_env` environment where all Google Cloud tools are installed.
@@ -181,6 +183,8 @@ gcloud auth list
 gcloud config set compute/region us-central1
 ```
 
+# 👇do in your notebook
+
 ## Using Python Libraries
 
 ### Basic BigQuery Example
@@ -233,17 +237,19 @@ pandas_gbq.to_gbq(
 )
 ```
 # bigquery-magics
-# In a Jupyter notebook cell:
+In a Jupyter notebook cell:
+```python
 %load_ext google.cloud.bigquery
-
+```
 # Then run queries with:
+```python
 %%bigquery
 SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 5
 
-Or save results to a DataFrame:
+# Or save results to a DataFrame:
 %%bigquery df
 SELECT * FROM `bigquery-public-data.samples.shakespeare` LIMIT 5
-
+```
 
 
 
