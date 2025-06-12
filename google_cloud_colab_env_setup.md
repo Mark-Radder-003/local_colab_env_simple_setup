@@ -237,7 +237,7 @@ pandas_gbq.to_gbq(
 )
 ```
 # bigquery-magics
-In a Jupyter notebook cell:
+In a notebook cell:
 ```python
 %load_ext google.cloud.bigquery
 ```
@@ -283,9 +283,9 @@ blob.download_to_filename('downloaded_file.csv')
 df = pd.read_csv('gs://bucket-name/path/to/file.csv')
 ```
 
-## Jupyter Notebook Integration
+## Notebook Integration
 
-When using Jupyter notebooks in `colab_env`:
+When using notebooks in `colab_env`:
 
 ```python
 import os
