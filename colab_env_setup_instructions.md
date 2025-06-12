@@ -42,7 +42,7 @@ mamba env export --from-history > colab_env_simple_updated.yml
 ## What's Included
 
 The environment includes:
-- **Python 3.13**
+- **Python**
 - **Jupyter ecosystem**: jupyter, notebook, ipykernel
 - **Data analysis**: pandas, numpy, matplotlib, seaborn, scipy, statsmodels
 - **Machine learning**: scikit-learn
