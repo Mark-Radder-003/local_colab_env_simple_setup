@@ -10,8 +10,6 @@
 # On any machine with mamba installed:
 mamba env create -f colab_env_simple.yml
 
-# Or with conda:
-conda env create -f colab_env_simple.yml
 
 # Activate the environment:
 mamba activate colab_env

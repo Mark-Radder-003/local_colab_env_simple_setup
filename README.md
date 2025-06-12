@@ -1,6 +1,6 @@
 # Mamba Environment for Data Analysis who wants to work on a Cloude based Google Colab Env and Local Env simultaneously
 
-This project provides a simple Conda/Mamba environment setup (`colab_env_simple.yml`) tailored for data analysis tasks, with a focus on seamless integration with Google Cloud Platform services.
+This project provides a simple Mamba environment setup (`colab_env_simple.yml`) tailored for data analysis tasks, with a focus on seamless integration with Google Cloud Platform services.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ The main goal is to offer a straightforward, cross-platform, and easy-to-maintai
 
 ## Creating the Environment
 
-You can create this environment using either Mamba (recommended for speed) or Conda.
+Create this environment using Mamba:
 
 ### Using Mamba
 
@@ -275,9 +275,9 @@ In a Jupyter Notebook cell, after installing `google-cloud-bigquery` and authent
 The `colab_env_simple.yml` uses a straightforward list of package names without specific versions (except for Python itself). This approach is beneficial because:
 
 1.  **Cross-platform Compatibility**: Works well across macOS, Linux, and Windows.
-2.  **Latest Versions**: Mamba/Conda will resolve and install the latest compatible versions of the listed packages.
+2.  **Latest Versions**: Mamba will resolve and install the latest compatible versions of the listed packages.
 3.  **Ease of Maintenance**: Simple to add or remove packages.
-4.  **Dependency Resolution**: Relies on Mamba/Conda's robust dependency resolver to handle compatibility.
+4.  **Dependency Resolution**: Relies on Mamba's robust dependency resolver to handle compatibility.
 5.  **Readability**: Clean and easy to understand the core packages included.
 
 ## Quick Commands Reference
@@ -285,37 +285,24 @@ The `colab_env_simple.yml` uses a straightforward list of package names without 
 ```bash
 # Create environment from file
 mamba env create -f colab_env_simple.yml
-# or
-conda env create -f colab_env_simple.yml
 
 # Activate environment
 mamba activate colab_env
-# or
-conda activate colab_env
 
 # Deactivate environment
 mamba deactivate
-# or
-conda deactivate
 
 # Update environment from (modified) file
 mamba env update -f colab_env_simple.yml --prune
-# or
-conda env update -f colab_env_simple.yml --prune
 
 # Export current environment (e.g., after installing new packages)
-# mamba env export > colab_env_updated.yml
-# conda env export > colab_env_updated.yml
+mamba env export > colab_env_updated.yml
 
 # List all environments
 mamba env list
-# or
-conda env list
 
 # Remove an environment
 mamba env remove -n colab_env
-# or
-conda env remove -n colab_env --all
 ```
 
 ## Additional Resources
@@ -324,5 +311,4 @@ conda env remove -n colab_env --all
 - [Google Cloud Setup Guide (`google_cloud_colab_env_setup.md`)](./google_cloud_colab_env_setup.md)
 - [Google Cloud Documentation](https://cloud.google.com/docs)
 - [Mamba Documentation](https://mamba.readthedocs.io/en/latest/)
-- [Conda Documentation](https://docs.conda.io/projects/conda/en/latest/)
 ```

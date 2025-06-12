@@ -76,7 +76,7 @@ Google Cloud organizes resources into projects. You need to set a default projec
 gcloud projects list
 ```
 
-这会显示：
+会显示：
 - Project ID
 - Project Name  
 - Project Number
