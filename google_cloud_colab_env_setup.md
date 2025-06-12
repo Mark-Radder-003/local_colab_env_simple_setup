@@ -4,7 +4,7 @@ This guide provides detailed instructions for setting up and using Google Cloud 
 
 ## Prerequisites
 
-- Mamba/Conda installed (you have this ✓)
+- Mamba installed (you have this ✓)
 - `colab_env` environment created with Google Cloud SDK and Python libraries (completed ✓)
 - A Google Cloud account (if you don't have one, visit https://cloud.google.com)
 
