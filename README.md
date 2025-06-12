@@ -1,4 +1,4 @@
-# Simplified Conda/Mamba Environment for Data Analysis with Google Cloud
+# Conda/Mamba Environment for Data Analysis who wants to work on a Cloude based Google Colab Env and Local Env simultaneously
 
 This project provides a simple Conda/Mamba environment setup (`colab_env_simple.yml`) tailored for data analysis tasks, with a focus on seamless integration with Google Cloud Platform services.
 
