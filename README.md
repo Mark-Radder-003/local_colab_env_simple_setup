@@ -1,4 +1,4 @@
-# Conda/Mamba Environment for Data Analysis who wants to work on a Cloude based Google Colab Env and Local Env simultaneously
+# Mamba Environment for Data Analysis who wants to work on a Cloude based Google Colab Env and Local Env simultaneously
 
 This project provides a simple Conda/Mamba environment setup (`colab_env_simple.yml`) tailored for data analysis tasks, with a focus on seamless integration with Google Cloud Platform services.
 
@@ -29,17 +29,6 @@ mamba env create -f colab_env_simple.yml
 mamba activate colab_env
 ```
 
-### Using Conda
-
-```bash
-# Create the environment from the YAML file
-conda env create -f colab_env_simple.yml
-
-# Activate the environment
-conda activate colab_env
-# Or, depending on your Conda version and shell:
-# source activate colab_env
-```
 
 After activation, your terminal prompt should indicate the active environment, for example: `(colab_env) your_username@hostname:~$`.
 
@@ -72,8 +61,6 @@ Ensure the `colab_env` is active:
 
 ```bash
 mamba activate colab_env
-# or
-# conda activate colab_env
 ```
 
 ### 2. Authenticate with Google Cloud
