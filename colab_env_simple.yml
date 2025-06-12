@@ -1,0 +1,24 @@
+name: colab_env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - jupyter
+  - notebook
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - scipy
+  - statsmodels
+  - google-cloud-sdk
+  - google-auth
+  - google-auth-oauthlib
+  - google-cloud-storage
+  - google-cloud-bigquery
+  - pandas-gbq
+  - bigquery-magics
+  - scikit-learn
+  - geopandas
+  - pyarrow
