@@ -307,8 +307,8 @@ mamba env remove -n colab_env
 
 ## Additional Resources
 
+- [Quick Start Guide (`quick_start.md`)](./quick_start.md)
 - [Colab Environment Setup Instructions (`colab_env_setup_instructions.md`)](./colab_env_setup_instructions.md)
-- [Google Cloud Setup Guide (`google_cloud_colab_env_setup.md`)](./google_cloud_colab_env_setup.md)
 - [Google Cloud Documentation](https://cloud.google.com/docs)
 - [Mamba Documentation](https://mamba.readthedocs.io/en/latest/)
 ```
