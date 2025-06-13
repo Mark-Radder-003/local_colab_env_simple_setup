@@ -52,12 +52,14 @@ This command will:
 4. Display a success message in your terminal
 
 
-### Application Default Credentials (for Python libraries)
+<!-- ### Application Default Credentials (for Python libraries)
 
 For Python scripts to access Google Cloud services:
 
 ```bash
 gcloud auth application-default login
+
+gcloud auth login --enable-gdrive-access
 ```
 
 ```bash
@@ -65,20 +67,100 @@ gcloud auth application-default login
 gcloud auth application-default login --scopes=https://www.googleapis.com/auth/cloud-platform
 ```
 
-This creates credentials that Python libraries like `google-cloud-storage` and `google-cloud-bigquery` will automatically use.
+This creates credentials that Python libraries like `google-cloud-storage` and `google-cloud-bigquery` will automatically use. -->
+
+## ✅ `OAuth 2.0` Approach
+
+### Using `OAuth 2.0` to Get User Credentials with Google Drive Permissions
+
+This is the most recommended practice, suitable for your current local Notebook environment.
+
+🔧 Steps:
+
+    Create OAuth credentials (one-time operation) - Visit Google Cloud Console - Credentials
+
+    Create OAuth 2.0 Client ID
+
+    Application type: Desktop App
+
+    Download client_secrets.json
+
+Run the following code in your Notebook:
+
+### ✅ Method A: Always Use `client.query()` + Explicit `creds`
+
+- Full functionality, supports Drive
+- Flexible integration with Pandas and Notebook code
+```python
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.cloud import bigquery
+
+SCOPES = [
+   "https://www.googleapis.com/auth/bigquery"
+   , "https://www.googleapis.com/auth/drive"
+   ]
+flow = InstalledAppFlow.from_client_secrets_file("client_secrets.json", SCOPES)
+creds = flow.run_local_server(port=0)
+
+client = bigquery.Client(credentials=creds, project="your-project-id")
+
+query = "SELECT col2 FROM `your_dataset.atr_modified` GROUP BY 1"
+results = client.query(query).result()
+```
+
+✅ Success Reason: You actively authorized `OAuth` credentials that include Drive access permissions and injected them into the BigQuery client.
+
+
+### ✅ Method B (Advanced): Force Inject `creds` into `%%bigquery` Magic Environment
+
+When you try to use the `%%bigquery` magic command to execute the same query:
+
+```sql
+%%bigquery col2
+SELECT col2 FROM `your_dataset.atr_modified` GROUP BY 1
+```
+
+It fails again with Drive permission-related errors.
+
+### 📌 Root Cause Analysis:
+
+- `%%bigquery` defaults to using **Application Default Credentials (ADC)**, not your authorized `creds`
+- Therefore it cannot access Google Drive tables
+
+---
+
+### ✅ Recommended Solutions
+```python
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.cloud.bigquery.magics import context
+
+
+SCOPES = [
+   "https://www.googleapis.com/auth/bigquery"
+   , "https://www.googleapis.com/auth/drive"
+   ]
+flow = InstalledAppFlow.from_client_secrets_file("client_secrets.json", SCOPES)
+creds = flow.run_local_server(port=0)
+
+
+context.credentials = creds
+
+context.project = "your-project-id"
+```
+
 
 ## Step 3: Set Your Default Project
 
 Google Cloud organizes resources into projects. You need to set a default project for your commands.
 
 ### Find Your Project ID
-使用这个命令查看你的项目列表：
+Use this command to view your project list:
 
 ```bash
 gcloud projects list
 ```
 
-会显示：
+This will display:
 - Project ID
 - Project Name  
 - Project Number
@@ -294,8 +376,7 @@ import os
 PROJECT_ID = os.environ.get('PROJECT_ID')
 
 # Load BigQuery magic commands
-# %load_ext google.cloud.bigquery
-cal
+%load_ext google.cloud.bigquery
 
 # Run queries with %%bigquery magic (uses default project)
 %%bigquery df
