@@ -1,5 +1,19 @@
-# Google Sheets files
-*.gsheet
+# GCP Credentials and Service Account Keys
+*.json
+credentials.json
+service-account.json
+service_account.json
+key.json
+gcp-key.json
+gcp-credentials.json
+client_secret*.json
+client_secrets*.json
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+!.env.template
 
 # Python
 __pycache__/
@@ -22,6 +36,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # Virtual Environment
 venv/
@@ -38,31 +53,38 @@ venv.bak/
 profile_default/
 ipython_config.py
 
-# Environment Variables
-.env
-.env.*
-!.env.example
-
-# Data Files
+# Data Files (potentially sensitive)
 *.csv
 *.xlsx
 *.xls
 *.parquet
 *.feather
+*.h5
+*.hdf5
 *.pkl
 *.pickle
+*.gsheet
 data/
 datasets/
+raw_data/
+processed_data/
 
 # Configuration Files
 config.ini
 config.yaml
 config.yml
 settings.json
+local_settings.py
 
 # Logs
 *.log
 logs/
+log/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
 
 # Mac OS
 .DS_Store
@@ -70,6 +92,8 @@ logs/
 ._*
 .Spotlight-V100
 .Trashes
+ehthumbs.db
+Thumbs.db
 
 # IDE
 .vscode/
@@ -77,3 +101,26 @@ logs/
 *.swp
 *.swo
 *~
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# BigQuery
+*.bq
+
+# Cloud Storage
+gs_cache/
+cloud_storage_cache/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Docker
+Dockerfile.local
+docker-compose.override.yml
