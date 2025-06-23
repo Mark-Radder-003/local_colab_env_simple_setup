@@ -25,7 +25,7 @@ Required for Google Drive-based BigQuery external tables.
 #### Create OAuth Credentials
 1. Visit [Google Cloud Console - Credentials](https://console.cloud.google.com/apis/credentials)
 2. Create OAuth 2.0 Client ID (Desktop App)
-3. Download `client_secrets.json`
+3. Download `Oauth20_client_secrets.json`
 
 #### Use in Python/Jupyter
 ```python
@@ -37,7 +37,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/drive"
 ]
 
-flow = InstalledAppFlow.from_client_secrets_file("client_secrets.json", SCOPES)
+flow = InstalledAppFlow.from_client_secrets_file("Oauth20_client_secrets.json", SCOPES)
 creds = flow.run_local_server(port=0)
 
 # Use with BigQuery client
