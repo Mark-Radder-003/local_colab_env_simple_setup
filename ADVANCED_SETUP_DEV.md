@@ -83,7 +83,7 @@ This is the most recommended practice, suitable for your current local Notebook 
 
     Application type: Desktop App
 
-    Download client_secrets.json
+    Download Oauth20_client_secrets.json
 
 Run the following code in your Notebook:
 
@@ -99,7 +99,7 @@ SCOPES = [
    "https://www.googleapis.com/auth/bigquery"
    , "https://www.googleapis.com/auth/drive"
    ]
-flow = InstalledAppFlow.from_client_secrets_file("client_secrets.json", SCOPES)
+flow = InstalledAppFlow.from_client_secrets_file("Oauth20_client_secrets.json", SCOPES)
 creds = flow.run_local_server(port=0)
 
 client = bigquery.Client(credentials=creds, project="your-project-id")
@@ -139,7 +139,7 @@ SCOPES = [
    "https://www.googleapis.com/auth/bigquery"
    , "https://www.googleapis.com/auth/drive"
    ]
-flow = InstalledAppFlow.from_client_secrets_file("client_secrets.json", SCOPES)
+flow = InstalledAppFlow.from_client_secrets_file("Oauth20_client_secrets.json", SCOPES)
 creds = flow.run_local_server(port=0)
 
 
